@@ -144,6 +144,11 @@ _G.packer_plugins = {
     path = "C:\\Users\\Umiko\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\undotree",
     url = "https://github.com/mbbill/undotree"
   },
+  ["vim-eunuch"] = {
+    loaded = true,
+    path = "C:\\Users\\Umiko\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\vim-eunuch",
+    url = "https://github.com/tpope/vim-eunuch"
+  },
   ["vim-fugitive"] = {
     loaded = true,
     path = "C:\\Users\\Umiko\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\vim-fugitive",
