@@ -55,9 +55,16 @@ return require('packer').startup(function(use)
         }
     }
 
+    -- cmake tools
+    use {'Civitasv/cmake-tools.nvim',
+        requires = {
+            { "nvim-lua/plenary.nvim" },
+        }
+    }
     -- Eunuch
     use ('tpope/vim-eunuch')
     if packer_bootstrap then
     require('packer').sync()
+
   end
 end)
