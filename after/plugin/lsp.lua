@@ -4,7 +4,7 @@ lsp.preset('recommended')
 lsp.setup()
 
 lsp.ensure_installed({
-	'rust_analyzer',
+	'rust_analyzer', 'clangd',
 })
 
 lsp.nvim_workspace()
