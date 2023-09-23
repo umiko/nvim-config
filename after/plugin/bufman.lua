@@ -13,13 +13,13 @@ require("buffer_manager").setup({
     }
   },
   focus_alternate_buffer = false,
-  short_file_names = true,
-  short_term_names = true,
-  loop_nav = false,
+  short_file_names = false,
+  short_term_names = false,
+  loop_nav = true,
 })
 local bmui = require("buffer_manager.ui")
 -- Just the menu
-map({ 't', 'n' }, '<leader>m', bmui.toggle_quick_menu, opts)
+map({ 't', 'n' }, '<leader>bm', bmui.toggle_quick_menu, opts)
 -- Open menu and search
 map({ 't', 'n' }, '<M-m>', function ()
   bmui.toggle_quick_menu()
