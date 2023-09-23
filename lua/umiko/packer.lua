@@ -2,14 +2,14 @@
 vim.cmd [[packadd packer.nvim]]
 
 local ensure_packer = function()
-  local fn = vim.fn
-  local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
-  if fn.empty(fn.glob(install_path)) > 0 then
-    fn.system({'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path})
-    vim.cmd [[packadd packer.nvim]]
-    return true
-  end
-  return false
+    local fn = vim.fn
+    local install_path = fn.stdpath('data') .. '/site/pack/packer/start/packer.nvim'
+    if fn.empty(fn.glob(install_path)) > 0 then
+        fn.system({ 'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path })
+        vim.cmd [[packadd packer.nvim]]
+        return true
+    end
+    return false
 end
 
 local packer_bootstrap = ensure_packer()
@@ -26,7 +26,8 @@ return require('packer').startup(function(use)
 
     -- Color Scheme
     --	use('rebelot/kanagawa.nvim')
-    use('folke/tokyonight.nvim')
+    --  use('folke/tokyonight.nvim')
+    use { "catppuccin/nvim", as = "catppuccin" }
 
     use('nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' })
     use('theprimeagen/harpoon')
@@ -56,15 +57,23 @@ return require('packer').startup(function(use)
     }
 
     -- cmake tools
-    use {'Civitasv/cmake-tools.nvim',
+    use { 'Civitasv/cmake-tools.nvim',
         requires = {
             { "nvim-lua/plenary.nvim" },
         }
     }
     -- Eunuch
-    use ('tpope/vim-eunuch')
-    if packer_bootstrap then
-    require('packer').sync()
+    use('tpope/vim-eunuch')
 
-  end
+    -- Lua Line
+    use {
+        'nvim-lualine/lualine.nvim',
+        requires = { 'nvim-tree/nvim-web-devicons', opt = false }
+    }
+    -- buffer manager
+    use('j-morano/buffer_manager.nvim')
+
+    if packer_bootstrap then
+        require('packer').sync()
+    end
 end)

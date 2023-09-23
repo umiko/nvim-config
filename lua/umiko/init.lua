@@ -1,3 +1,5 @@
 require("umiko.packer")
+require("umiko.bufman")
 require("umiko.remap")
+require("umiko.bubbles")
 require("umiko.set")
