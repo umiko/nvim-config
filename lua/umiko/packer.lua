@@ -73,6 +73,8 @@ return require('packer').startup(function(use)
     -- buffer manager
     use('j-morano/buffer_manager.nvim')
 
+    -- trouble
+    use('folke/trouble.nvim')
     if packer_bootstrap then
         require('packer').sync()
     end
