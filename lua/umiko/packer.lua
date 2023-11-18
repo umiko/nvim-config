@@ -73,6 +73,9 @@ return require('packer').startup(function(use)
     -- buffer manager
     use('j-morano/buffer_manager.nvim')
 
+    use { 'kkoomen/vim-doge',
+        run = ':call doge#install()'
+    }
     -- trouble
     use('folke/trouble.nvim')
     if packer_bootstrap then
